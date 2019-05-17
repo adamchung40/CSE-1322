@@ -1,0 +1,11 @@
+//Adam Chung
+import java.util.Random;
+
+public class Lab1BBinary {
+
+	public static void main(String[] args) {
+		int[] nums = {1,4,4,22,-5,10,21,-47,23};
+		
+	}
+
+}

@@ -1,0 +1,36 @@
+//Adam Chung
+import java.util.Arrays;
+import java.util.Random;
+
+
+public class ppp {
+
+    static int binarySearch(int[] nums) {
+        Arrays.sort(nums);
+        int low = 0; int high = nums.length; int mid; boolean found = false;
+        int target = 10;
+        while(!found) {
+            mid = (high+low)/2;
+            if(nums[mid] == target) {
+                found = true;
+                return target;
+            }
+            else if (nums[mid] > target){
+                mid = high;
+            }
+            else if (nums[mid] < target) {
+                mid = low;
+            }else {
+                return -1;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1,4,4,22,-5,10,21,-47,23};
+        System.out.println(binarySearch(nums));
+
+    }
+
+}

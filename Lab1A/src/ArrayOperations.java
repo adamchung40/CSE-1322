@@ -1,0 +1,52 @@
+//Adam Chung
+import java.util.Random;
+
+public class ArrayOperations {
+
+	static int findLargest(int[] array) {
+		int largest = array[0];
+		for(int i : array) {
+			if(i > largest) {
+				largest = i;
+			}
+		}
+		return largest;
+	}
+	
+	static int[] fillArray(int[] array) {
+		Random rand = new Random();
+
+		for(int i=0;i<array.length;i++) {
+			array[i] = rand.nextInt(100+1+100)-100;
+		}
+		return array;
+	}
+	
+	static int posSeries(int[] data) {
+		int count = 0;
+		for(int i : data) {
+			if(i > 0){
+				count += 1;
+			}else {
+				return count;
+			}
+		}
+		return count;
+	}
+	
+	public static void main(String[] args) {
+		int[] array = {1,4,13,43,-25,17,22,-37,29};
+		System.out.println("The largest number in array is: "+findLargest(array));
+		
+		int[] data = new int[5];
+		fillArray(data);
+		System.out.println("The largest number in the data is: "+findLargest(data));
+		System.out.println("The sum of the two largest numbers is: "+(findLargest(array)+findLargest(data)));
+		
+		for(int i:data) {
+			System.out.print(i+" ");
+		}
+		System.out.println("Longest continous series of positive numbers: "+posSeries(data));
+	}
+
+}

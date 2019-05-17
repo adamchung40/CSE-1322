@@ -1,0 +1,21 @@
+//Adam Chung
+import java.util.Random;
+
+public class Lab1BLinear {
+
+	static int linearSearch(int[] nums) {
+		int key = 10;
+		for(int i:nums) {
+			if(i == key){
+				return i;
+			}
+			else return -1;
+		}
+	}
+	
+	public static void main(String[] args) {
+		int[] nums = {1,4,4,22,-5,10,21,-47,23};
+		linearSearch(nums);
+	}
+
+}

@@ -1,0 +1,44 @@
+//Adam Chung
+import java.util.Random;
+
+public class Lab1BLinear {
+
+	static int linearSearch(int[] nums) {
+		int key = 4;
+		int count = 0;
+		int occurrence = 0;
+		for(int i:nums) {
+			if(i == key) {
+				count += 1;
+				occurrence += 1;
+			}else {
+				count += 1;
+			}
+		}
+		if(count >= 1) {
+			System.out.println("The key value index: "+count+"\nThe key value occurres: "+occurrence);
+		}else {
+			System.out.println("Value not found in the array ");
+		}
+	}
+	
+	static int[] fillArray(int[] data) {
+		Random rand = new Random();
+		for(int i=0;i<data.length;i++) {
+			data[i] = rand.nextInt((100-1+100)-100);
+		}
+		return data;
+	}
+	
+	public static void main(String[] args) {
+		int[] nums = {1,4,4,22,-5,10,21,-47,23};
+		System.out.println("Index of the key element is: "+linearSearch(nums));
+		
+		int[] data = new int[20];
+		fillArray(data);
+		linearSearch(data);
+		
+		
+	}
+
+}
