@@ -122,7 +122,7 @@ class Faculty extends Employee
 	{ return this.rank; }
 	
 	public String toString() {
-		String output = super.toString()+ "Office Hours: "+getOfficeHrs()+ "\nRank: "+getRank(); 
+		String output = super.toString()+ "Office Hours: "+this.officeHrs+ "\nRank: "+this.rank; 
 		return output;
 	}
 }
