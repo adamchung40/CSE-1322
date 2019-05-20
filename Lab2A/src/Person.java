@@ -27,8 +27,14 @@ public class Person //Superclass
 	public String getEmail() 
 	{ return this.email; }
 	
-	public void displayInfo() {
-		System.out.println("Name: " + this.name + "\nAddress: "+ this.address + "\nPhone#: "+ this.phoneNum + "\nEmail: "+ this.email); }
+	public String getClassName() 
+	{ return this.getClass().getSimpleName(); }
+	
+	public String toString() {
+		String output = getClassName() + ":\nName: " + this.name + "\nAddress: "+ this.address +
+						"\nPhone#: "+ this.phoneNum + "\nEmail: "+ this.email; 
+		return output;
+		}
 }
 
 class Student extends Person //Subclass
@@ -44,12 +50,13 @@ class Student extends Person //Subclass
 	public String getClassStatus() 
 	{ return this.classStatus; }
 	
-	public void displayStudent() {
-		displayInfo();
-		System.out.println("Class Status: "+ getClassStatus());
+	public String toString() {
+		String output = "\n" + super.toString() + "\nClass Status: "+ this.classStatus;
+		return output;
 	}
 	
 }
+
 class Employee extends Person //Subclass
 {
 	private String office;
@@ -73,12 +80,14 @@ class Employee extends Person //Subclass
 	public String getDateHired() 
 	{ return this.dateHired; }
 	
-	public void displayEmployee() {
-		displayInfo();
-		System.out.println("Office: "+getOffice()+ "\nSalary: "+getSalary()+"\nDate Hired: "+ getDateHired());
+	public String toString() {
+		String output = "\n" + super.toString() +"\nOffice: "+this.office+ "\nSalary: "+this.salary+
+						"\nDate Hired: "+ this.dateHired;
+		return output;
 	}
 }
-class MyDate extends Employee
+
+class MyDate 
 {
 	String year;
 	String month;
@@ -93,6 +102,7 @@ class MyDate extends Employee
 		this.startDay = this.month +" "+this.day+", "+this.year;
 	}
 }
+
 class Faculty extends Employee
 {
 	private String officeHrs;
@@ -111,11 +121,12 @@ class Faculty extends Employee
 	public String getRank() 
 	{ return this.rank; }
 	
-	public void displayFaculty() {
-		displayEmployee();
-		System.out.println("Office Hours: "+getOfficeHrs()+"\nRank: "+getRank()); 
+	public String toString() {
+		String output = super.toString()+ "Office Hours: "+getOfficeHrs()+ "\nRank: "+getRank(); 
+		return output;
 	}
 }
+
 class Staff extends Employee
 {
 	private String title;
@@ -129,8 +140,8 @@ class Staff extends Employee
 	public String getTitle() 
 	{ return this.title; }
 	
-	public void displayStaff() {
-		displayEmployee();
-		System.out.println("Title: "+getTitle()); 
+	public String toString() {
+		String output = super.toString()+ "Title: "+this.title;
+		return output;
 	}
 }
